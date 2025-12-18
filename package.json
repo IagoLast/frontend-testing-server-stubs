@@ -1,0 +1,50 @@
+{
+  "name": "@frontend-testing/server-stubs",
+  "version": "0.0.1-alpha.2",
+  "description": "Decoupled MSW server management and JSON response stubbing for testing",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run --config vitest.node.config.ts",
+    "test:unit": "vitest run --config vitest.node.config.ts",
+    "test:browser": "vitest run --config vitest.config.ts",
+    "test:watch": "vitest --config vitest.node.config.ts",
+    "test:watch:browser": "vitest --config vitest.config.ts",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --config vitest.node.config.ts --coverage",
+    "prepublishOnly": "npm run build && npm run test"
+  },
+  "keywords": [
+    "msw",
+    "mock",
+    "testing",
+    "server",
+    "stub",
+    "api"
+  ],
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "msw": "^2.0.0",
+    "vitest": ">=3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "@vitest/browser-playwright": "^4.0.7",
+    "msw": "^2.12.0",
+    "playwright": "^1.57.0",
+    "typescript": "~5.9.3",
+    "vitest": "^4.0.7"
+  }
+}
